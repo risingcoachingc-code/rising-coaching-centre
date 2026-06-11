@@ -1,0 +1,721 @@
+/* ==========================
+   LIQUID GLASS V2
+   By Asmamul SK
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+--bg:#060816;
+--glass:rgba(255,255,255,.08);
+--glass-border:rgba(255,255,255,.12);
+--primary:#ff8a00;
+--text:#ffffff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+/* Liquid Background */
+
+.liquid-bg{
+position:fixed;
+inset:0;
+z-index:-10;
+overflow:hidden;
+}
+
+.blob{
+position:absolute;
+border-radius:50%;
+filter:blur(100px);
+animation:float 12s infinite ease-in-out;
+}
+
+.blob1{
+width:350px;
+height:350px;
+background:#ff8a0035;
+top:-80px;
+left:-80px;
+}
+
+.blob2{
+width:300px;
+height:300px;
+background:#0080ff30;
+right:-50px;
+top:150px;
+}
+
+.blob3{
+width:400px;
+height:400px;
+background:#ff5e0020;
+bottom:-100px;
+left:30%;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-40px);
+}
+}
+
+/* Liquid Glass */
+
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(30px);
+-webkit-backdrop-filter:blur(30px);
+border:1px solid rgba(255,255,255,.12);
+box-shadow:
+0 8px 32px rgba(0,0,0,.25),
+inset 0 1px 1px rgba(255,255,255,.15);
+}
+
+/* Navbar */
+
+@media (max-width: 768px){
+
+.navbar{
+width:95%;
+left:50%;
+transform:translateX(-50%);
+padding:12px 15px;
+border-radius:20px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+min-width:0;
+flex:1;
+}
+
+.brand img{
+width:40px;
+height:40px;
+flex-shrink:0;
+}
+
+.brand div{
+min-width:0;
+}
+
+.brand h2{
+font-size:14px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.brand span{
+font-size:11px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+nav{
+display:none;
+}
+}
+/* Hero */
+
+.hero{
+min-height:100vh;
+padding:140px 8% 80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+}
+
+.hero-content{
+max-width:650px;
+}
+
+.badge{
+display:inline-block;
+padding:12px 18px;
+border-radius:50px;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:5.5rem;
+line-height:1;
+font-weight:800;
+margin-bottom:25px;
+}
+
+.hero p{
+font-size:1.1rem;
+line-height:1.8;
+opacity:.85;
+max-width:600px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+margin-top:35px;
+}
+
+.btn-primary{
+background:linear-gradient(
+135deg,
+#ff8a00,
+#ff5e00
+);
+padding:15px 30px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-glass{
+padding:15px 30px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.05);
+}
+
+/* Floating Cards */
+
+.floating-cards{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.float-card{
+width:280px;
+padding:30px;
+border-radius:28px;
+}
+
+.float-card i{
+font-size:2rem;
+color:var(--primary);
+margin-bottom:15px;
+}
+
+.float-card h3{
+font-size:2rem;
+margin-bottom:5px;
+}
+
+.float-card:nth-child(1){
+transform:translateX(-40px);
+}
+
+.float-card:nth-child(2){
+transform:translateX(30px);
+}
+
+.float-card:nth-child(3){
+transform:translateX(-20px);
+}
+
+/* Stats */
+
+.stats{
+padding:0 8% 120px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.stat{
+padding:30px;
+text-align:center;
+border-radius:25px;
+}
+
+.stat h2{
+font-size:2.5rem;
+color:#ffb347;
+margin-bottom:8px;
+}
+/* ==========================
+   ABOUT + COURSES + FOOTER
+========================== */
+
+section{
+padding:120px 8%;
+}
+
+.section-heading{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-heading span{
+color:#ff8a00;
+font-weight:600;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.section-heading h2{
+font-size:3rem;
+margin-top:10px;
+margin-bottom:15px;
+}
+
+.section-heading p{
+max-width:700px;
+margin:auto;
+opacity:.8;
+line-height:1.8;
+}
+
+/* About */
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.info-card{
+padding:35px;
+border-radius:30px;
+text-align:center;
+transition:.4s;
+}
+
+.info-card:hover{
+transform:translateY(-12px);
+}
+
+.info-card i{
+font-size:2.5rem;
+color:#ff8a00;
+margin-bottom:20px;
+}
+
+.info-card h3{
+margin-bottom:10px;
+}
+
+/* Founders */
+
+.founder-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.founder-card{
+padding:40px;
+border-radius:30px;
+text-align:center;
+transition:.4s;
+}
+
+.founder-card:hover{
+transform:translateY(-12px);
+}
+
+.founder-avatar{
+width:90px;
+height:90px;
+margin:auto;
+margin-bottom:20px;
+border-radius:50%;
+background:linear-gradient(135deg,#ff8a00,#ff5e00);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+font-weight:700;
+}
+
+.founder-card a{
+display:block;
+margin-top:10px;
+color:#ffb347;
+text-decoration:none;
+}
+
+/* Courses */
+
+.course-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.course-card{
+padding:35px;
+border-radius:28px;
+text-align:center;
+transition:.4s;
+}
+
+.course-card:hover{
+transform:scale(1.05);
+}
+
+.course-card h3{
+margin-bottom:12px;
+}
+
+.course-card span{
+font-size:1.2rem;
+font-weight:700;
+color:#ffb347;
+}
+
+/* Why Us */
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.why-card{
+padding:30px;
+border-radius:25px;
+text-align:center;
+font-weight:600;
+transition:.4s;
+}
+
+.why-card:hover{
+transform:translateY(-10px);
+}
+
+/* Gallery */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.gallery-item{
+overflow:hidden;
+border-radius:30px;
+}
+
+.gallery-item img{
+width:100%;
+height:280px;
+object-fit:cover;
+transition:.5s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* Facebook */
+
+.community-box{
+max-width:800px;
+margin:auto;
+padding:60px;
+border-radius:35px;
+text-align:center;
+}
+
+.community-box i{
+font-size:4rem;
+color:#1877f2;
+margin-bottom:20px;
+}
+
+.community-box p{
+margin:20px 0;
+opacity:.85;
+}
+
+/* CTA */
+
+.cta-card{
+max-width:900px;
+margin:auto;
+padding:70px;
+text-align:center;
+border-radius:40px;
+}
+
+.cta-card h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.cta-card p{
+margin-bottom:25px;
+opacity:.85;
+}
+
+/* Contact */
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.contact-card{
+padding:35px;
+border-radius:30px;
+text-align:center;
+}
+
+.contact-card i{
+font-size:2rem;
+color:#ff8a00;
+margin-bottom:15px;
+}
+
+/* WhatsApp */
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+color:white;
+text-decoration:none;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+/* Footer */
+
+.footer{
+margin:80px 20px 20px;
+padding:60px 30px;
+border-radius:35px;
+text-align:center;
+}
+
+.footer-links{
+margin:25px 0;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+color:white;
+text-decoration:none;
+}
+
+.developer{
+margin-top:25px;
+font-size:1rem;
+}
+
+.developer span{
+color:#ff8a00;
+font-weight:700;
+font-size:1.1rem;
+}
+
+.copyright{
+margin-top:20px;
+opacity:.7;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.navbar{
+padding:15px 20px;
+}
+
+nav{
+display:none;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding-top:140px;
+}
+
+.hero h1{
+font-size:3.2rem;
+}
+
+.hero-buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.floating-cards{
+width:100%;
+}
+
+.float-card{
+width:100%;
+transform:none !important;
+}
+
+.section-heading h2{
+font-size:2rem;
+}
+
+.cta-card{
+padding:40px 25px;
+}
+
+.cta-card h2{
+font-size:2rem;
+}
+
+.community-box{
+padding:35px 25px;
+}
+<div class="brand">
+    <img src="logo.png" alt="Logo">
+    <h2>Rising Coaching Centre</h2>
+</div>
+
+}/* JS Effects */
+
+.glass,
+.hero-content,
+.section-heading{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.cursor-glow{
+position:fixed;
+width:250px;
+height:250px;
+border-radius:50%;
+background:radial-gradient(
+circle,
+rgba(255,138,0,.15),
+transparent 70%
+);
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:-1;
+}@media (max-width: 768px){
+
+.navbar{
+width:95%;
+padding:12px 15px;
+}
+
+.brand{
+gap:10px;
+}
+
+.brand img{
+width:45px;
+height:45px;
+}
+
+.brand h2{
+font-size:0.9rem;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+max-width:170px;
+}
+
+.brand span{
+font-size:0.7rem;
+}
+
+}.brand h2{
+font-size:14px;
+font-weight:700;
+}
+
+.brand span{
+display:none;
+}.developer{
+margin-top:25px;
+text-align:center;
+}
+.developer{
+margin-top:25px;
+text-align:center;
+}
+
+.developer span{
+display:block;
+font-size:1.3rem;
+font-weight:700;
+color:#ff8a00;
+margin:10px 0;
+}
+
+.developer-social{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:15px;
+}
+
+.developer-social a{
+width:50px;
+height:50px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:#fff;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.developer-social a:hover{
+transform:translateY(-5px) scale(1.08);
+background:#ff8a00;
+box-shadow:0 0 20px rgba(255,138,0,.5);
+}
+
+.developer-social i{
+font-size:1.3rem;
+}
